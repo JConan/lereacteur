@@ -7,8 +7,9 @@
   "author": "jconan <conanjahh@hotmail.com>",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "scripts": {
-    "test": "jest --watch"
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest --watch"
   },
   "devDependencies": {
     "@types/jest": "^26.0.22",
