@@ -1,4 +1,5 @@
-import { initBox, createToCoord } from "./box02";
+import { initBox, createToCoord, onCoordinate } from "./box02";
+import _ from "underscore";
 
 describe("exercice 02", () => {
   describe("tooling", () => {
@@ -37,6 +38,12 @@ describe("exercice 02", () => {
         test("index 3 => {0; 1}", () =>
           expect(toCoord(3)).toEqual({ x: 0, y: 1 }));
       });
+    });
+    describe("conditional value mapper based on coordinate validation", () => {
+      // const onCoord = onCoordinate(({ x, y }) => x === 1 && y === 1, "X");
+      const onCoord = onCoordinate((o) => _.isEqual(o, { x: 1, y: 1 }), "X");
+      expect(onCoord({ x: 0, y: 0 })).toEqual(null);
+      expect(onCoord({ x: 1, y: 1 })).toEqual("X");
     });
   });
 });

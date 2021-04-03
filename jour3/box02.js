@@ -10,6 +10,13 @@ export const createToCoord = (width) => (index) => ({
   y: Math.trunc(index / width),
 });
 
+export const onCoordinate = (condition, value, other = null) => (coord) =>
+  condition(coord) ? value : other;
+
+export const box = (w, h) => {
+  return "AA";
+};
+
 // const ifTrue = (condition, value) => (o) =>
 //   condition(o.i) ? { i: { ...o.i }, c: value } : { ...o };
 
