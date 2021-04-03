@@ -1,16 +1,20 @@
-import { box } from "./box02";
+import { initBox } from "./box02";
 
 describe("exercice 02", () => {
-  describe("tooling", () => {});
-  describe("create box", () => {
-    test("horizontal", () => {
-      expect(box(5, 1)).toBe("ABBBA");
-    });
-    test("horizontal", () => {
-      expect(box(3, 1)).toBe("ABA");
-    });
-    test("vertical", () => {
-      expect(box(1, 5)).toBe("A\nB\nB\nB\nA");
+  describe("tooling", () => {
+    describe("initialize box", () => {
+      test("box(1,1)", () => {
+        expect(initBox(1, 1)).toBe(" ");
+      });
+      test("initBox(2,1)", () => {
+        expect(initBox(2, 1)).toBe("  ");
+      });
+      test("initBox(1,2)", () => {
+        expect(initBox(1, 2)).toBe(" \n ");
+      });
+      test("initBox(3,3)", () => {
+        expect(initBox(3, 3)).toBe("   \n   \n   ");
+      });
     });
   });
 });

@@ -1,15 +1,32 @@
-export const box = (width, height) => {
-  return [...Array((width + 1) * height).keys()]
-    .map((i) => ({ i, c: "" }))
-    .map(({ i, c }) => (i === 0 || i === width - 1 ? { i, c: "A" } : { i, c }))
-    .map(({ i, c }) => (i > 0 && i < width - 1 ? { i, c: "B" } : { i, c }))
-    .map(({ i, c }) => (i > 0 && i < width - 1 ? { i, c: "B" } : { i, c }))
-    .map(({ i, c }) =>
-      i > width && i % (width + 1) === 0 ? { i, c: c + "\n" } : { i, c }
-    )
-    .map(({ c }) => c)
-    .slice(0, -1);
-  // .join("");
+export const initBox = (w, h) => {
+  return [...Array((w + 1) * h).keys()]
+    .map((i) => (i % (w + 1) === w ? "\n" : " "))
+    .slice(0, -1)
+    .join("");
 };
 
-export default { box };
+// const ifTrue = (condition, value) => (o) =>
+//   condition(o.i) ? { i: { ...o.i }, c: value } : { ...o };
+
+// export const createToCoord = (w, h) => (i) => ({
+//   x: i % w,
+//   y: Math.trunc(i / w),
+// });
+
+// export const box = (width, height) => {
+//   const toCoord = createToCoord(width + 1, height);
+
+//   return [...Array((width + 1) * height).keys()]
+//     .map((i) => ({ i: toCoord(i), c: " " }))
+//     .map(ifTrue(({ y }) => y === 0, "A"))
+//     .map(ifTrue(({ y }) => y > 0, "C"))
+//     .map(ifTrue(({ x }) => x === width, "\n"))
+//     .map(ifTrue(({ x, y }) => y === 0 && x > 0 && x < width - 1, "B"))
+//     .map(ifTrue(({ x, y }) => y === height - 1 && x > 0 && x < width - 1, "B"))
+//     .map(ifTrue(({ x, y }) => x === 0 && y > 0 && y < height - 1, "B"))
+//     .map(({ c }) => c)
+//     .slice(0, -1)
+//     .join("");
+// };
+
+// export default { box };
