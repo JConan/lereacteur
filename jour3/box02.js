@@ -5,6 +5,11 @@ export const initBox = (w, h) => {
     .join("");
 };
 
+export const createToCoord = (width) => (index) => ({
+  x: index % width,
+  y: Math.trunc(index / width),
+});
+
 // const ifTrue = (condition, value) => (o) =>
 //   condition(o.i) ? { i: { ...o.i }, c: value } : { ...o };
 
