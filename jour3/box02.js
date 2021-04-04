@@ -13,32 +13,31 @@ export const createToCoord = (width) => (index) => ({
 export const onCoordinate = (condition, value, other = null) => (coord) =>
   condition(coord) ? value : other;
 
+export const mapValueBox = (mapData, value, ...coords) => {};
+
 export const box = (w, h) => {
-  return "AA";
+  const whenA = ({ x, y }) => y === 0 && (x === 0 || x === w - 1);
+  const whenB = ({ x, y }) =>
+    ((y === 0 || y === h - 1) && x > 0 && x < w - 1) ||
+    (y > 0 && y < h && (x === 0 || x === w - 1));
+  const whenC = ({ x, y }) => y > 0 && y === h - 1 && (x === 0 || x === w - 1);
+
+  const toCoord = createToCoord(w + 1);
+  const cells = initBox(w, h)
+    .split("")
+    .map((v, i) => ({ c: toCoord(i), v }))
+    .map(({ c, v }) => ({
+      c,
+      v: onCoordinate(whenA, "A", v)(c),
+    }))
+    .map(({ c, v }) => ({
+      c,
+      v: onCoordinate(whenB, "B", v)(c),
+    }))
+    .map(({ c, v }) => ({
+      c,
+      v: onCoordinate(whenC, "C", v)(c),
+    }));
+
+  return cells.map(({ v }) => v).join("");
 };
-
-// const ifTrue = (condition, value) => (o) =>
-//   condition(o.i) ? { i: { ...o.i }, c: value } : { ...o };
-
-// export const createToCoord = (w, h) => (i) => ({
-//   x: i % w,
-//   y: Math.trunc(i / w),
-// });
-
-// export const box = (width, height) => {
-//   const toCoord = createToCoord(width + 1, height);
-
-//   return [...Array((width + 1) * height).keys()]
-//     .map((i) => ({ i: toCoord(i), c: " " }))
-//     .map(ifTrue(({ y }) => y === 0, "A"))
-//     .map(ifTrue(({ y }) => y > 0, "C"))
-//     .map(ifTrue(({ x }) => x === width, "\n"))
-//     .map(ifTrue(({ x, y }) => y === 0 && x > 0 && x < width - 1, "B"))
-//     .map(ifTrue(({ x, y }) => y === height - 1 && x > 0 && x < width - 1, "B"))
-//     .map(ifTrue(({ x, y }) => x === 0 && y > 0 && y < height - 1, "B"))
-//     .map(({ c }) => c)
-//     .slice(0, -1)
-//     .join("");
-// };
-
-// export default { box };

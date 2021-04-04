@@ -1,4 +1,10 @@
-import { initBox, createToCoord, onCoordinate } from "./box02";
+import {
+  initBox,
+  createToCoord,
+  onCoordinate,
+  mapValueBox,
+  box,
+} from "./box02";
 import _ from "underscore";
 
 describe("exercice 02", () => {
@@ -42,8 +48,35 @@ describe("exercice 02", () => {
     describe("conditional value mapper based on coordinate validation", () => {
       // const onCoord = onCoordinate(({ x, y }) => x === 1 && y === 1, "X");
       const onCoord = onCoordinate((o) => _.isEqual(o, { x: 1, y: 1 }), "X");
-      expect(onCoord({ x: 0, y: 0 })).toEqual(null);
-      expect(onCoord({ x: 1, y: 1 })).toEqual("X");
+      test("should return null when not valid", () => {
+        expect(onCoord({ x: 0, y: 0 })).toEqual(null);
+      });
+      test("should return defined value when match", () => {
+        expect(onCoord({ x: 1, y: 1 })).toEqual("X");
+      });
+    });
+  });
+  describe("box", () => {
+    test("create box of size 1x1", () => {
+      expect(box(1, 1)).toEqual("A");
+    });
+    test("create box of size 2x1", () => {
+      expect(box(2, 1)).toEqual("AA");
+    });
+    test("create box of size 3x1", () => {
+      expect(box(3, 1)).toEqual("ABA");
+    });
+    test("create box of size 1x2", () => {
+      expect(box(1, 2)).toEqual("A\nC");
+    });
+    test("create box of size 1x3", () => {
+      expect(box(1, 3)).toEqual("A\nB\nC");
+    });
+    test("create box of size 3x3", () => {
+      expect(box(3, 3)).toEqual("ABA\nB B\nCBC");
+    });
+    test("create box of size 4x4", () => {
+      expect(box(4, 4)).toEqual("ABBA\nB  B\nB  B\nCBBC");
     });
   });
 });
