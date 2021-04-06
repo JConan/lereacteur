@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@types/jest": "^26.0.22",
+    "fast-check": "^2.14.0",
     "jest": "^26.6.3"
   },
   "dependencies": {
