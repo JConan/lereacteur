@@ -1,19 +1,22 @@
 import mongoose, { Connection } from "mongoose";
 import { MongoMemoryServer } from "mongodb-memory-server";
-import drugModelBuilder from "./inventory"
+import createDrugModel, { IDrug } from "./inventory";
 
 describe("Drugstore Inventory MODELs for persisting storage", () => {
-  const mongoServer = new MongoMemoryServer();
+  const mongoServer = new MongoMemoryServer({ autoStart: true });
   let connection: Connection;
 
   beforeAll(async () => {
-    connection = await mongoose.createConnection(
-      await mongoServer.getUri(),
+    connection = await mongoose.createConnection(await mongoServer.getUri(), {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    createDrugModel(connection).insertMany([
       {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    );
+        name: "DOLIPRANE",
+        quantity: 20,
+      },
+    ]);
   });
 
   afterAll(async () => {
@@ -26,12 +29,21 @@ describe("Drugstore Inventory MODELs for persisting storage", () => {
   });
 
   it("should be able to create a drug in database", async () => {
-    const DrugModel = drugModelBuilder(connection)
-    const drug = await new DrugModel({ name: "ASPEGIC", quantity: 10}).save()
-    expect(drug).toHaveProperty("_id")
-    expect(await DrugModel.countDocuments()).not.toBe(0)
-    expect(await DrugModel.findOne({name: "ASPEGIC"})).toHaveProperty("quantity", 10)
-  })
+    const DrugModel = createDrugModel(connection);
+    const data: IDrug = {
+      name: "ASPEGIC",
+      quantity: 10,
+    };
+    const drug = await new DrugModel(data).save();
+    expect(drug).toHaveProperty("_id");
+  });
 
-
+  it("should be able to retrieve a drug from database", async () => {
+    const DrugModel = createDrugModel(connection);
+    expect(await DrugModel.countDocuments()).not.toBe(0);
+    expect(await DrugModel.findOne({ name: "DOLIPRANE" })).toHaveProperty(
+      "quantity",
+      20
+    );
+  });
 });
