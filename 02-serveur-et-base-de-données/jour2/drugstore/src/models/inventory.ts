@@ -1,15 +1,15 @@
-import { Schema, Connection, Document } from "mongoose"
+import { Schema, Connection, Document } from "mongoose";
 
 export interface IDrug {
-    name: string,
-    quantity: number
+  name: string;
+  quantity: number;
 }
 
 const DrugSchema = new Schema({
-    name: String,
-    quantity: Number
-})
+  name: String,
+  quantity: Number,
+});
 
 export default (connection: Connection) => {
-    return connection.model<IDrug & Document>("Drug", DrugSchema)
-}
+  return connection.model<IDrug & Document>("Drug", DrugSchema);
+};
