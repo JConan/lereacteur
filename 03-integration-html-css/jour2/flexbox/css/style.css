@@ -18,6 +18,10 @@ h2 {
 }
 
 /* EXERCICE 1 */
+.exercice1 ul{
+	display: flex;
+}
+
 
 /* EXERCICE 2 */
 
