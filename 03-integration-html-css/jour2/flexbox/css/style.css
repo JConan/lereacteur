@@ -53,6 +53,13 @@ h2 {
 }
 
 /* EXERCICE 5 */
+.exercice5, .exercice5 ul{
+  display: flex;
+}
+
+.exercice5 ul{
+  margin-left: auto
+}
 
 /* EXERCICE 6 */
 
