@@ -38,6 +38,19 @@ h2 {
 }
 
 /* EXERCICE 4 */
+.exercice4 ul{
+  display: flex;
+}
+
+.exercice4 ul li{
+  flex-grow: 1;
+  text-align: center;
+}
+
+.exercice4 ul li:nth-child(2){
+  flex-grow: 3;
+  margin: 0 15px 0 15px
+}
 
 /* EXERCICE 5 */
 
