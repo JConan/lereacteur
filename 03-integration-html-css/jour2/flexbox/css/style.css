@@ -55,10 +55,7 @@ h2 {
 /* EXERCICE 5 */
 .exercice5, .exercice5 ul{
   display: flex;
-}
-
-.exercice5 ul{
-  margin-left: auto
+  justify-content: space-between;
 }
 
 /* EXERCICE 6 */
