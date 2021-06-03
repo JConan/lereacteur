@@ -29,6 +29,13 @@ h2 {
 }
 
 /* EXERCICE 3 */
+.exercice3 ul{
+  display: flex;
+}
+.exercice3 ul li{
+  flex-grow: 1;
+  text-align: center;
+}
 
 /* EXERCICE 4 */
 
