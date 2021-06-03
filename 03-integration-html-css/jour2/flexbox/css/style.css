@@ -59,5 +59,9 @@ h2 {
 }
 
 /* EXERCICE 6 */
+.exercice6{
+  display: flex;
+  justify-content: center;
+}
 
 /* EXERCICE 7 */
