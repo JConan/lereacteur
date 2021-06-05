@@ -1,0 +1,83 @@
+header {
+  display: block;
+  font-family: "Trip Sans Normal";
+  font-weight: 700;
+}
+
+header nav {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 1184px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header div {
+  flex: 2;
+}
+header div:first-child {
+  flex: 1;
+}
+
+.logo img {
+  width: 188px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.menu .button {
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 1;
+  border-radius: 35px;
+  margin: 0 6px;
+  background-color: #f2f2f200;
+  transition: background-color 0.4s ease;
+}
+
+.menu .button:hover {
+  background-color: #f2f2f2;
+  transition: background-color 0.2s ease;
+}
+
+.menu .button:last-child {
+  background-color: black;
+  color: white;
+}
+
+.menu .button:last-child:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: background-color 0.2s ease;
+}
+
+.menu .button:last-child {
+  flex: 2;
+}
+
+/* header nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding-left: 24px;
+}
+
+header nav div {
+  flex: 2;
+  height: 60px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+}
+header nav div:first-child {
+  flex: 1;
+}
+*/
