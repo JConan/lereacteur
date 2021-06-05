@@ -63,21 +63,20 @@ header div:first-child {
   flex: 2;
 }
 
-/* header nav {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  padding-left: 24px;
-}
+@media all and (max-width: 1280px) {
+  header nav {
+    width: 95%;
+  }
 
-header nav div {
-  flex: 2;
-  height: 60px;
-  border: 1px solid black;
-  display: flex;
-  align-items: center;
+  .menu .button:not(:last-child) a {
+    display: none;
+  }
+
+  .menu .button {
+    flex: 1;
+    margin: 0;
+  }
+  .menu .button:last-child {
+    flex: 2.5;
+  }
 }
-header nav div:first-child {
-  flex: 1;
-}
-*/
