@@ -1,0 +1,14 @@
+.AboutMe{
+    margin-left: auto;
+    background: white;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.AboutMe > div:nth-child(2){
+    height: 150px;
+    background: lightgrey;
+    margin-bottom: 25px;
+    width: calc(100% - 15px);
+}

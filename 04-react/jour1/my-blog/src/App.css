@@ -1,0 +1,44 @@
+.App{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 50px;
+}
+
+/* HEADER */
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: white;
+    padding-bottom: 20px;
+}
+.Header h1{
+    margin-bottom: 10px;
+}
+
+/* CONTENT */
+
+.Content{
+    display:flex;
+    justify-content: space-between;
+}
+.Content > div:first-child{
+    flex-basis: 95%;
+}
+
+/* FOOTER */
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:lightgray;
+    height:48px;
+    margin-top:50px
+}
+b{
+    padding-left:0.25rem;
+    padding-right:0.25rem;
+}

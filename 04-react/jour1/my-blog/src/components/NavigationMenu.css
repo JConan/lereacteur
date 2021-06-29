@@ -1,0 +1,19 @@
+.NavigationMenu {
+    background: black;
+    color: white;
+    font-weight: 700;
+}
+
+.NavigationMenu ul{
+    display:flex;
+    padding: 0;
+}
+
+.NavigationMenu li{
+    list-style: none;
+    padding: 0 25px;
+}
+
+.NavigationMenu li:last-child{
+    margin-left: auto;
+}
