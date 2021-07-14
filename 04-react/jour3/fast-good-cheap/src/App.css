@@ -1,0 +1,16 @@
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.footer {
+  background: red;
+  height: 80px;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+}
