@@ -1,6 +1,6 @@
 [submodule "04-react/jour6/deliveroo-backend"]
 	path = 04-react/jour6/deliveroo-backend
-	url = git@github.com:JConan/lereacteur-04-j6-deliveroo-backend.git
+	url = git@github.com:JConan/lereacteur-exo-react_deliveroo-backend.git
 [submodule "04-react/jour6/deliveroo-frontend"]
 	path = 04-react/jour6/deliveroo-frontend
 	url = git@github.com:JConan/lereacteur-exo-react_deliveroo-frontend.git
