@@ -7,3 +7,6 @@
 [submodule "04-react/vinted-frontend"]
 	path = 04-react/vinted-frontend
 	url = git@github.com:JConan/lereacteur-exo-react_vinted-frontend.git
+[submodule "04-react/marvel/backend"]
+	path = 04-react/marvel/backend
+	url = git@github.com:JConan/lereacteur-exo-react_marvel-backend.git
