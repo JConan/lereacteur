@@ -10,3 +10,6 @@
 [submodule "04-react/marvel/backend"]
 	path = 04-react/marvel/backend
 	url = git@github.com:JConan/lereacteur-exo-react_marvel-backend.git
+[submodule "04-react/marvel/frontend"]
+	path = 04-react/marvel/frontend
+	url = git@github.com:JConan/lereacteur-exo-react_marvel-frontend.git
