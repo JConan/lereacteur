@@ -13,3 +13,6 @@
 [submodule "04-react/marvel/frontend"]
 	path = 04-react/marvel/frontend
 	url = git@github.com:JConan/lereacteur-exo-react_marvel-frontend.git
+[submodule "05-react-native/airbnb"]
+	path = 05-react-native/airbnb
+	url = git@github.com:JConan/react-native_airbnb.git
